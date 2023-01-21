@@ -8,6 +8,7 @@ plugins {
     kotlin("jvm") version kotlinPluginVersion
     kotlin("plugin.spring") version kotlinPluginVersion
     kotlin("plugin.jpa") version kotlinPluginVersion
+    kotlin("kapt") version kotlinPluginVersion
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_17
@@ -25,6 +26,7 @@ subprojects {
     apply(plugin = "kotlin")
     apply(plugin = "kotlin-spring")
     apply(plugin = "io.spring.dependency-management")
+    apply(plugin = "kotlin-kapt")
 
     dependencyManagement {
         imports {
@@ -43,9 +45,6 @@ subprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-        // mariadb
-        runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 
         // test
         testImplementation("org.springframework.boot:spring-boot-starter-test")
