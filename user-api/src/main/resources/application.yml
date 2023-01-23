@@ -2,7 +2,7 @@ server:
   port: 8081
 
 jwt:
-  issuer: jara
+  issuer: system
   subject: auth
   expire-time: 3600 # 1시간
   secret: my-secret
@@ -13,3 +13,7 @@ jwt:
 #    username: kotlin_jpa
 #    password: kotlin_jpa!@34
 
+logging:
+  level:
+    com:
+      soon83: debug

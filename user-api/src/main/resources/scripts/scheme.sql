@@ -6,7 +6,7 @@ create table users (
     username    varchar(50),
     password    varchar(100),
     profile_url varchar(100),
-    create_at   datetime default now(),
+    created_at   datetime default now(),
     updated_at  datetime default now(),
     primary key (id)
 );
