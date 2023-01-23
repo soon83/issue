@@ -11,37 +11,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 
 @Configuration
 class WebConfig(
-    private val authUserHandlerArgumentResolver: AuthUserHandlerArgumentResolver,
+    private val authUserResolver: AuthUserResolver,
 ) : WebMvcConfigurationSupport() {
 
     override fun addArgumentResolvers(argumentResolvers: MutableList<HandlerMethodArgumentResolver>) {
         argumentResolvers.apply {
-            add(authUserHandlerArgumentResolver)
+            add(authUserResolver)
         }
     }
 }
-
-@Component
-class AuthUserHandlerArgumentResolver : HandlerMethodArgumentResolver {
-
-    override fun supportsParameter(parameter: MethodParameter): Boolean =
-        AuthUser::class.java.isAssignableFrom(parameter.parameterType)
-
-    override fun resolveArgument(
-        parameter: MethodParameter,
-        mavContainer: ModelAndViewContainer?,
-        webRequest: NativeWebRequest,
-        binderFactory: WebDataBinderFactory?
-    ): Any? {
-        return AuthUser(
-            userId = 1,
-            userName = "나패존",
-        )
-    }
-}
-
-data class AuthUser(
-    val userId: Long,
-    val userName: String,
-    val profileUrl: String? = null,
-)

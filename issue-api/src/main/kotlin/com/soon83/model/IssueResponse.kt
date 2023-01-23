@@ -7,6 +7,7 @@ import java.time.ZonedDateTime
 
 data class IssueResponse(
     val id: Long,
+    val userId: Long,
     val summary: String,
     val description: String,
     val type: Issue.IssueType,
@@ -23,6 +24,7 @@ data class IssueResponse(
             with(issue) {
                 IssueResponse(
                     id = id!!,
+                    userId = userId,
                     summary = summary,
                     description = description,
                     type = type,

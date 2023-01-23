@@ -20,6 +20,10 @@ spring:
       hibernate:
         default_batch_fetch_size: 100
         format_sql: true
+
+auth:
+  url: http://localhost:8081/api/v1/users/me
+
 logging:
   level:
     com:
