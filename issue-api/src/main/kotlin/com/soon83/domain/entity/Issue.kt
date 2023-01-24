@@ -33,7 +33,7 @@ class Issue(
     var status: IssueStatus,
 
     @OneToMany(mappedBy = "issue")
-    var comments: MutableList<Comment> = mutableListOf(),
+    val comments: MutableList<Comment> = mutableListOf(),
 
     ) : BaseEntity() {
 
