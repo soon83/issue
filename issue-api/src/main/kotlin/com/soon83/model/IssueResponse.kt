@@ -3,7 +3,7 @@ package com.soon83.model
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.soon83.domain.Comment
 import com.soon83.domain.Issue
-import java.time.ZonedDateTime
+import java.time.LocalDateTime
 
 data class IssueResponse(
     val id: Long,
@@ -14,9 +14,9 @@ data class IssueResponse(
     val priority: Issue.IssuePriority,
     val status: Issue.IssueStatus,
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    val createdAt: ZonedDateTime?,
+    val createdAt: LocalDateTime?,
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    val updatedAt: ZonedDateTime?,
+    val updatedAt: LocalDateTime?,
     val comments: List<CommentResponse> = emptyList(),
 ) {
     companion object {

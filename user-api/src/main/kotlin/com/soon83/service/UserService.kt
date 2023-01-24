@@ -11,6 +11,7 @@ import com.soon83.exception.UserNotFoundException
 import com.soon83.model.SignInRequest
 import com.soon83.model.SignInResponse
 import com.soon83.model.SignUpRequest
+import com.soon83.model.SignUpResponse
 import com.soon83.utils.BCryptUtils
 import com.soon83.utils.JWTClaim
 import com.soon83.utils.JWTUtils
@@ -28,8 +29,8 @@ class UserService(
         private val CACHE_TTL = Duration.ofMinutes(1)
     }
 
-    suspend fun signUp(signUpRequest: SignUpRequest) {
-        with(signUpRequest) {
+    suspend fun signUp(signUpRequest: SignUpRequest): SignUpResponse {
+        val createdUser = with(signUpRequest) {
             userRepository.findByEmail(email)?.let {
                 throw UserExistsException()
             }
@@ -40,6 +41,9 @@ class UserService(
             )
             userRepository.save(user)
         }
+        return SignUpResponse(
+            id = createdUser.id!!
+        )
     }
 
     suspend fun signIn(signInRequest: SignInRequest): SignInResponse {

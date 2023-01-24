@@ -10,6 +10,6 @@ dependencies {
     implementation("at.favre.lib:bcrypt:0.9.0")
 
     // mariadb
-    runtimeOnly("io.r2dbc:r2dbc-h2")
-//    runtimeOnly("io.r2dbc:r2dbc-mariadb:1.1.3")
+//    runtimeOnly("io.r2dbc:r2dbc-h2")
+    implementation("org.mariadb:r2dbc-mariadb:1.1.3")
 }

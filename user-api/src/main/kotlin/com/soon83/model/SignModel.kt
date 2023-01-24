@@ -6,6 +6,10 @@ data class SignUpRequest(
     val username: String,
 )
 
+data class SignUpResponse(
+    val id: Long,
+)
+
 data class SignInRequest(
     val email: String,
     val password: String,

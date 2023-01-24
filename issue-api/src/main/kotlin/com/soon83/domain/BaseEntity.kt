@@ -1,21 +1,23 @@
 package com.soon83.domain
 
+import jakarta.persistence.EntityListeners
 import jakarta.persistence.MappedSuperclass
-import org.hibernate.annotations.CreationTimestamp
-import org.hibernate.annotations.UpdateTimestamp
 import org.springframework.data.annotation.CreatedBy
+import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedBy
-import java.time.ZonedDateTime
+import org.springframework.data.annotation.LastModifiedDate
+import org.springframework.data.jpa.domain.support.AuditingEntityListener
+import java.time.LocalDateTime
 
 @MappedSuperclass
-//@EntityListeners(AuditingEntityListener::class)
+@EntityListeners(AuditingEntityListener::class)
 abstract class BaseEntity {
 
-    @CreationTimestamp
-    var createdAt: ZonedDateTime? = null
+    @CreatedDate
+    var createdAt: LocalDateTime? = null
 
-    @UpdateTimestamp
-    var updatedAt: ZonedDateTime? = null
+    @LastModifiedDate
+    var updatedAt: LocalDateTime? = null
 
     @CreatedBy
     var createdBy: String? = null

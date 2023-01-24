@@ -20,9 +20,9 @@ class UserController(
     private val log = KotlinLogging.logger {}
 
     @PostMapping("/signup")
-    suspend fun signUp(@RequestBody request: SignUpRequest) {
+    suspend fun signUp(@RequestBody request: SignUpRequest): SignUpResponse {
         log.debug { "# signUp # request: $request" }
-        userService.signUp(request)
+        return userService.signUp(request)
     }
 
     @PostMapping("signin")
