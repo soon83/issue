@@ -1,7 +1,7 @@
 package com.soon83.service
 
-import com.soon83.domain.Issue
-import com.soon83.domain.IssueRepository
+import com.soon83.domain.entity.Issue
+import com.soon83.domain.repository.IssueRepository
 import com.soon83.exception.NotFoundException
 import com.soon83.model.IssueRequest
 import com.soon83.model.IssueResponse

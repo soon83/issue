@@ -1,6 +1,10 @@
 package com.soon83.model
 
-import com.soon83.domain.Comment
+import com.soon83.domain.entity.Comment
+
+data class CommentRequest(
+    val body: String,
+)
 
 data class CommentResponse(
     val id: Long,

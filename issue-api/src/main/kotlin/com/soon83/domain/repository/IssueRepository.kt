@@ -1,5 +1,6 @@
-package com.soon83.domain
+package com.soon83.domain.repository
 
+import com.soon83.domain.entity.Issue
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface IssueRepository: JpaRepository<Issue, Long> {

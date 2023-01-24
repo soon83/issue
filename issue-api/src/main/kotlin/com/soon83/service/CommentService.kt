@@ -1,8 +1,8 @@
 package com.soon83.service
 
-import com.soon83.domain.Comment
-import com.soon83.domain.CommentRepository
-import com.soon83.domain.IssueRepository
+import com.soon83.domain.entity.Comment
+import com.soon83.domain.repository.CommentRepository
+import com.soon83.domain.repository.IssueRepository
 import com.soon83.exception.NotFoundException
 import com.soon83.model.CommentRequest
 import com.soon83.model.CommentResponse

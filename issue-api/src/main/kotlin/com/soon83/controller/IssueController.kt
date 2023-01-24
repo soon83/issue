@@ -1,7 +1,7 @@
 package com.soon83.controller
 
 import com.soon83.config.AuthUser
-import com.soon83.domain.Issue
+import com.soon83.domain.entity.Issue
 import com.soon83.model.IssueRequest
 import com.soon83.service.IssueService
 import org.springframework.http.HttpStatus

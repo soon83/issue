@@ -1,5 +1,6 @@
-package com.soon83.domain
+package com.soon83.domain.entity
 
+import com.soon83.domain.BaseEntity
 import jakarta.persistence.*
 
 @Entity
