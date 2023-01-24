@@ -32,8 +32,8 @@ class Issue(
     @Enumerated(EnumType.STRING)
     var status: IssueStatus,
 
-    @OneToMany
-    val comments: MutableList<Comment> = mutableListOf(),
+    @OneToMany(mappedBy = "issue")
+    var comments: MutableList<Comment> = mutableListOf(),
 
     ) : BaseEntity() {
 
